@@ -1,1 +1,1 @@
-print("Voila, hier kunnen we begi nnen aan den bot!")
+print("Voila, hier kunnen we beginnen aan den bot!")
