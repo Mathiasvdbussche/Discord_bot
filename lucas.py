@@ -52,7 +52,7 @@ async def roll(ctx, *, rollType):
     tempResult = 0
     
     if int(getal) > 1:
-        getal = int(getal) - 1
+        getal = str(getal).replace('1','',1)
 
     while teller <= int(getal):
         
@@ -96,4 +96,4 @@ async def roll(ctx, *, rollType):
 #async def on_member_remove(member):
 #    print(f' {member} has left the server.')
 
-client.run('')
+client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.OJS6hF9K74pMpM6s0d_6XA94h84')
