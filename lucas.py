@@ -79,6 +79,7 @@ async def roll(ctx, *, rollType):
             result += tempResult
         else:
             result = 'Invalid dice specified!!!'
+            break
         
         if teller == int(getal):
             stringResult += str(tempResult) +' ==> dice: '
@@ -96,4 +97,4 @@ async def roll(ctx, *, rollType):
 #async def on_member_remove(member):
 #    print(f' {member} has left the server.')
 
-client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.OJS6hF9K74pMpM6s0d_6XA94h84')
+client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.mfNEEUTXk_fIZhLCU4WAIZ-VKqA')
