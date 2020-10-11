@@ -84,56 +84,33 @@ async def roll(ctx, *, rollType):
         
         if dice == 'd4':
             tempResult = random.randint(1,4)
-            result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
-            
+            result += tempResult                        
         elif dice == 'd6':
             tempResult = random.randint(1,6)
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         elif dice == 'd8':
             tempResult = random.randint(1,8)
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         elif dice == 'd10':
             tempResult = random.randint(1,10)
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         elif dice == 'd100':
             tempResult = random.randint(1,10)*10
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         elif dice == 'd12':
             tempResult = random.randint(1,12)
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         elif dice == 'd20':
             tempResult = random.randint(1,20)
             result += tempResult
-            if teller == int(getal):
-                stringResult += str(tempResult) +' ==> dice: '
-            else:
-                stringResult += str(tempResult) +' + '
         else:
             result = 'Invalid dice specified!!!'
+        
+        if teller == int(getal):
+            stringResult += str(tempResult) +' ==> dice: '
+        else:
+            stringResult += str(tempResult) +' + '
+        
         teller += 1        
     await ctx.send('You rolled: ' + str(result)+ '\n' + '(' + stringResult + dice + ')')
         
@@ -149,4 +126,4 @@ async def roll(ctx, *, rollType):
 #async def on_member_remove(member):
 #    print(f' {member} has left the server.')
 
-client.run('token here...')
+client.run('')
