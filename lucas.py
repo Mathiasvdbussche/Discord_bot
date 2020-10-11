@@ -73,6 +73,7 @@ async def d20(ctx):
 
 @client.command()
 async def roll(ctx, *, rollType):
+    rollType = rollType.lower()
     getal = rollType[0: rollType.index('d')]    
     dice = rollType[rollType.index('d'):]
     teller = 1
