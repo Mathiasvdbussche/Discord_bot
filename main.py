@@ -46,6 +46,30 @@ async def d6(ctx):
     options = [1,2,3,4,5,6]
     await ctx.send('You rolled: ' + str(random.choice(options)))
 
+@client.command()
+async def d8(ctx):
+    options = [1,2,3,4,5,6,7,8]
+    await ctx.send('You rolled: ' + str(random.choice(options)))
+
+@client.command()
+async def d10(ctx):
+    options = [1,2,3,4,5,6,7,8,9,10]
+    await ctx.send('You rolled: ' + str(random.choice(options)))
+
+@client.command()
+async def d100(ctx):
+    options = [1,2,3,4,5,6,7,8,9,10]
+    await ctx.send('You rolled: ' + str((random.choice(options)*10) + random.choice(options)))
+
+@client.command()
+async def d12(ctx):
+    options = [1,2,3,4,5,6,7,8,9,10,11,12]
+    await ctx.send('You rolled: ' + str(random.choice(options)))
+
+@client.command()
+async def d20(ctx):
+    options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    await ctx.send('You rolled: ' + str(random.choice(options)))
 #@client.event
 #async def on_member_join(member):
 #   print("Welkom homo " + member)
