@@ -42,44 +42,18 @@ async def _8ball(ctx, *, question):
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
 @client.command()
-async def d6(ctx):
-    options = [1,2,3,4,5,6]
-    await ctx.send('You rolled: ' + str(random.choice(options)))
-
-@client.command()
-async def d8(ctx):
-    options = [1,2,3,4,5,6,7,8]
-    await ctx.send('You rolled: ' + str(random.choice(options)))
-
-@client.command()
-async def d10(ctx):
-    options = [1,2,3,4,5,6,7,8,9,10]
-    await ctx.send('You rolled: ' + str(random.choice(options)))
-
-@client.command()
-async def d100(ctx):
-    options = [1,2,3,4,5,6,7,8,9,10]
-    await ctx.send('You rolled: ' + str((random.choice(options)*10) + random.choice(options)))
-
-@client.command()
-async def d12(ctx):
-    options = [1,2,3,4,5,6,7,8,9,10,11,12]
-    await ctx.send('You rolled: ' + str(random.choice(options)))
-
-@client.command()
-async def d20(ctx):
-    options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-    await ctx.send('You rolled: ' + str(random.choice(options)))
-
-@client.command()
 async def roll(ctx, *, rollType):
     rollType = rollType.lower()
-    getal = rollType[0: rollType.index('d')]    
+    getal = rollType[0: rollType.index('d')] + '1'        
     dice = rollType[rollType.index('d'):]
     teller = 1
     result = 0
     stringResult = ''
     tempResult = 0
+    
+    if int(getal) > 1:
+        getal = int(getal) - 1
+
     while teller <= int(getal):
         
         if dice == 'd4':
@@ -113,10 +87,6 @@ async def roll(ctx, *, rollType):
         
         teller += 1        
     await ctx.send('You rolled: ' + str(result)+ '\n' + '(' + stringResult + dice + ')')
-        
-
-    
-                    
 
 #@client.event
 #async def on_member_join(member):

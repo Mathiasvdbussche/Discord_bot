@@ -96,4 +96,4 @@ async def roll(ctx, *, rollType):
 #async def on_member_remove(member):
 #    print(f' {member} has left the server.')
 
-client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.ztzmLHBaRf9wdcyI7tcRqFWMt54')
+client.run('')
