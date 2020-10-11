@@ -8,7 +8,7 @@ async def on_ready():
     print("bot is ready.")
 
 @client.command()
-async def ping(ctx):
-    await ctx.send('pong!')    
+async def ping(ctf):
+    await ctf.send('bong!')    
 
-client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.YTZkSXqT219CZYOeTpRHnYBjWDY')
+client.run('')
