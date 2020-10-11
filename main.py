@@ -41,6 +41,11 @@ async def _8ball(ctx, *, question):
                 'Very doubtful.']
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
+@client.command()
+async def d6(ctx):
+    options = [1,2,3,4,5,6]
+    await ctx.send('You rolled: ' + str(random.choice(options)))
+
 #@client.event
 #async def on_member_join(member):
 #   print("Welkom homo " + member)
