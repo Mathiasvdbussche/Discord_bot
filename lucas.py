@@ -70,6 +70,37 @@ async def d12(ctx):
 async def d20(ctx):
     options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     await ctx.send('You rolled: ' + str(random.choice(options)))
+
+@client.command()
+async def roll(ctx, *, rollType):
+    getal = rollType[0: rollType.index('d')]    
+    dice = rollType[rollType.index('d'):]
+    teller = 1
+    result = 0
+    while teller <= int(getal):
+        teller += 1
+        if dice == 'd4':
+            result += random.randint(1,4)
+        elif dice == 'd6':
+            result += random.randint(1,6)
+        elif dice == 'd8':
+            result += random.randint(1,8)
+        elif dice == 'd10':
+            result += random.randint(1,10)
+        elif dice == 'd100':
+            result += (random.randint(1,10)*10)
+        elif dice == 'd12':
+            result += random.randint(1,12)
+        elif dice == 'd20':
+            result += random.randint(1,20)
+        else:
+            result = 'Invalid dice specified!!!'        
+    await ctx.send('You rolled: ' + str(result)+ '\n' + '(' + str(getal) + dice + ')')
+        
+
+    
+                    
+
 #@client.event
 #async def on_member_join(member):
 #   print("Welkom homo " + member)
@@ -78,4 +109,4 @@ async def d20(ctx):
 #async def on_member_remove(member):
 #    print(f' {member} has left the server.')
 
-client.run('')
+client.run('NzY0Nzk4NjM3NjE1NDgwODQy.X4LgPA.dCDpPXCFqAKvbFX5AOYo9WDZ7i4')
