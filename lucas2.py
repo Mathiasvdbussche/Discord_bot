@@ -44,7 +44,7 @@ async def _8ball(ctx, *, question):
 @client.command()
 async def roll(ctx, *, rollType):
     rollType = rollType.lower()
-    getal = rollType[0: rollType.index('d')] + '1'        
+    getal = rollType[0: rollType.index('d')]        
     dice = rollType[rollType.index('d'):]
     dice = dice.replace('d','')
     dice = int(dice)
@@ -54,10 +54,8 @@ async def roll(ctx, *, rollType):
     stringResult = ''
     tempResult = 0
     
-    if int(getal) > 1:
-        getal = str(getal).replace('1','',1)
-        if int(getal) == 1:
-            getal = getal + '0'
+    if isinstance(getal,int) == False:
+        getal = 1
 
     while teller <= int(getal):
                         
