@@ -44,53 +44,41 @@ async def _8ball(ctx, *, question):
 @client.command()
 async def roll(ctx, *, rollType):
     rollType = rollType.lower()
-    getal = rollType[0: rollType.index('d')] + '1'        
+    getal = rollType[0: rollType.index('d')]        
     dice = rollType[rollType.index('d'):]
     dice = dice.replace('d','')
+    dice = int(dice)
+    dices = [4,6,8,10,12,20,100]
     teller = 1
     result = 0
     stringResult = ''
     tempResult = 0
     
-    if int(getal) > 1:
-        getal = str(getal).replace('1','',1)
-        if int(getal) == 1:
-            getal = getal + '0'
+    getal = int(getal)
+    if isinstance(getal,str) == True:
+        getal = 1
 
     while teller <= int(getal):
-        
-        if dice == '4':
-            tempResult = random.randint(1,4)
-            result += tempResult                        
-        elif dice == '6':
-            tempResult = random.randint(1,6)
-            result += tempResult
-        elif dice == '8':
-            tempResult = random.randint(1,8)
-            result += tempResult
-        elif dice == '10':
-            tempResult = random.randint(1,10)
-            result += tempResult
-        elif dice == '100':
-            tempResult = random.randint(1,10)*10
-            result += tempResult
-        elif dice == '12':
-            tempResult = random.randint(1,12)
-            result += tempResult
-        elif dice == '20':
-            tempResult = random.randint(1,20)
-            result += tempResult
+                        
+        if dice in dices:
+            if dice == 100:
+                tempResult = random.randint(1,dice)*10
+                result += tempResult           
+            else:
+                tempResult = random.randint(1,dice)
+                result += tempResult
         else:
             result = 'Invalid dice specified!!!'
             break
-        
+                                                                                            
         if teller == int(getal):
             stringResult += str(tempResult) +' ==> dice: '
         else:
             stringResult += str(tempResult) +' + '
         
-        teller += 1        
-    await ctx.send('*You rolled: ' + str(result)+ '*\n' + '**(' + stringResult + dice + ')**')
+        teller += 1
+
+    await ctx.send('*You rolled: ' + str(result) + '*\n' + '**(' + stringResult + str(dice) + ')**')
 
 #@client.event
 #async def on_member_join(member):

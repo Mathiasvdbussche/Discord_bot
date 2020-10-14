@@ -54,7 +54,8 @@ async def roll(ctx, *, rollType):
     stringResult = ''
     tempResult = 0
     
-    if isinstance(getal,int) == False:
+    getal = int(getal)
+    if isinstance(getal,str) == True:
         getal = 1
 
     while teller <= int(getal):
